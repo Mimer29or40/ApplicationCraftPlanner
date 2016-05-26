@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--<?import de.tesis.dynaware.grapheditor.GraphEditorContainer?>-->
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import mimer29or40.craftPlanner.gui.GraphContainer?>
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="mimer29or40.craftPlanner.gui.Controller">
+    <VBox fillWidth="true" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0">
+        <MenuBar>
+            <Menu text="File">
+                <MenuItem fx:id="menuExport" onAction="#export" text="Export"/>
+                <MenuItem fx:id="menuClear" onAction="#clear" text="Clear"/>
+                <SeparatorMenuItem/>
+                <MenuItem fx:id="menuClose" onAction="#close" text="Close"/>
+            </Menu>
+            <Menu text="Data">
+                <MenuItem fx:id="menuDataDir" onAction="#selectDataDirectory" text="Select Data Directory"/>
+                <MenuItem fx:id="menuReload" onAction="#reload" text="Reload"/>
+            </Menu>
+            <!--<Menu text="Settings">-->
+                <!--<RadioMenuItem fx:id="menuShowGrid" text="Show Grid"/>-->
+                <!--<RadioMenuItem fx:id="menuSnapToGrid" text="Snap to Grid"/>-->
+                <!--<Menu text="Intersection Style">-->
+                    <!--<RadioMenuItem fx:id="menuDetouredStyle" onAction="#setDetouredStyle" selected="true" text="Detours"/>-->
+                    <!--<RadioMenuItem fx:id="menuGapedStyle" onAction="#setGapedStyle" text="Gaps"/>-->
+                <!--</Menu>-->
+                <!--<Menu fx:id="menuZoomOptions" text="Zoom Level"/>-->
+            <!--</Menu>-->
+        </MenuBar>
+        <SplitPane maxHeight="Infinity" maxWidth="Infinity" VBox.vgrow="ALWAYS">
+            <padding>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+            </padding>
+            <VBox maxWidth="400.0" minWidth="200" spacing="5.0" SplitPane.resizableWithParent="false">
+                <TextField fx:id="filter" maxWidth="Infinity" minHeight="30"/>
+                <ListView fx:id="itemList" maxHeight="Infinity" maxWidth="Infinity" VBox.vgrow="ALWAYS"/>
+                <Button fx:id="buttonAddItem" maxWidth="Infinity" minHeight="30" text="addItem"/>
+            </VBox>
+            <GraphContainer fx:id="graphContainer" minWidth="0" minHeight="0" maxWidth="Infinity" maxHeight="Infinity" VBox.vgrow="ALWAYS"/>
+        </SplitPane>
+    </VBox>
+    <!--<ToggleButton fx:id="minimapButton" focusTraversable="false" text="Minimap" AnchorPane.rightAnchor="1" AnchorPane.topAnchor="1"/>-->
+</AnchorPane>
